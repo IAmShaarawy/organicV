@@ -1,0 +1,29 @@
+<div ng-init="total " >
+    <h1>Cart</h1>
+    <div ng-repeat="product in cartProducts "  >
+        <div class="panel panel-default" ng-show="!productActive[$index]">
+            <div class="row panel-body">
+                <div class="col-md-3 " >
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="removeCartItem(product._id,$index)"><span aria-hidden="true">&cross;</span></button>
+                    <img class=" img-thumbnail " ng-src="images/{{product.img_path}}" width="50px" >
+                </div>
+                <div class="col-md-6 " >
+                    <h3>{{product.name}}</h3>
+                </div>
+                <div class="col-md-3 "  >
+
+                    <h4>{{  product.price   | currency:"":2 }} L.E/Kg</h4>
+                </div>
+                <label class="sr-only" >{{total = total+product.price}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9" >
+            <button class="btn btn-success form-control" >Check Out!</button>
+        </div>
+        <div class="col-md-3">
+            <h2>{{total| currency:'':2}} L.E</h2>
+        </div>
+    </div>
+</div>

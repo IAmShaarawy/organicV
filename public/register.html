@@ -1,0 +1,20 @@
+<h1>Registration</h1>
+<form role="form" ng-submit="signUp()" >
+    <p class="form-group">
+        <input type="text" class="form-control" placeholder="First Name" required ng-model="user.firstName"  >
+        <input type="text" class="form-control" placeholder="Last Name" required ng-model="user.lastName" >
+    </p>
+    <p>
+        <input type="email" class="form-control" placeholder="Email" required ng-model="user.username" >
+    </p>
+    <span class="label label-danger">{{error}}</span>
+    <p>
+        <input type="password" class="form-control" placeholder="Password" required ng-model="user.password" >
+    </p>
+    <p>
+        <textarea class="form-control" placeholder="Address" required  style="height: 100px" ng-model="user.address" ></textarea>
+    </p>
+    <p>
+        <input type="submit" class="btn btn-primary btn-block" value="SignUp" >
+    </p>
+</form>
